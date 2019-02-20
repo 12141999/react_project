@@ -1,6 +1,7 @@
 import React , { Component } from 'react';
 import Input from '../../../Component/UI/Input/Input';
 import './Contactdata.css';
+import { connect } from 'react-redux';
 
 class ContactData extends Component {
     state = {
@@ -59,8 +60,8 @@ class ContactData extends Component {
 
     orderHandler = (event) => {
         event.preventDefault(); 
-        console.log(this.props.ingredients);
-        console.log(this.props.totalprice);
+        console.log(this.props.ings);
+        console.log(this.props.price);
         this.props.history.push("/");
     }
 
@@ -99,4 +100,11 @@ class ContactData extends Component {
     }
 }
 
-export default ContactData;
+const mapStateToProps = state => {
+    return {
+        ings : state.ingridients,
+        price : state.totalprice
+    }
+}
+
+export default connect(mapStateToProps)(ContactData);

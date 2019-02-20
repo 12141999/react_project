@@ -5,15 +5,17 @@ import './Burger.css';
 
 
 const burger = (props) => {
-
+    //console.log(props.ingredients);
     let transformedIngredients = Object.keys( props.ingredients )
         .map( igKey => {
+            //console.log([...Array( props.ingredients[igKey])]);
             return [...Array( props.ingredients[igKey] )].map( ( _, i ) => {
                 return <Burgeringident key={igKey + i} type={igKey} />;
-            } );
+            });
         } ).reduce((arr,el)=>{
             return arr.concat(el);
         } , []);
+        
         if(transformedIngredients.length===0){
             transformedIngredients = <p>Please, add some ingredients!!!</p>
         }

@@ -2,15 +2,15 @@ import React , { Component } from 'react';
 import './Burgeringident.css';
 import PropTypes from 'prop-types';
 
-class BurgerIngrident extends Component {
+class BurgerIngridient extends Component {
     render() {
-        let ingrident = null;
+        let ingridient = null;
         switch(this.props.type){
             case('bread-bottom'):
-                ingrident = <div className="BreadBottom"></div>
+                ingridient = <div className="BreadBottom"></div>
                 break;
             case('bread-top'):
-                ingrident = (
+                ingridient = (
                     <div className="BreadTop">
                         <div className="Seeds1"></div>
                         <div className="Seeds2"></div>
@@ -18,27 +18,27 @@ class BurgerIngrident extends Component {
                 );
                 break;
             case('meat'):
-                ingrident = <div className="Meat"></div>
+                ingridient = <div className="Meat"></div>
                 break;
             case('cheese'):
-                ingrident = <div className="Cheese"></div>
+                ingridient = <div className="Cheese"></div>
                 break;
             case('bacon'):
-                ingrident = <div className="Bacon"></div>
+                ingridient = <div className="Bacon"></div>
                 break;
             case('salad'):
-                ingrident = <div className="Salad"></div>
+                ingridient = <div className="Salad"></div>
                 break;
             default:
-                ingrident = null;
+                ingridient = null;
     }
 
-    return ingrident;
+    return ingridient;
     }
 }
 
-BurgerIngrident.propTypes = {
+BurgerIngridient.propTypes = {
     type : PropTypes.string.isRequired
 };
 
-export default BurgerIngrident;
+export default BurgerIngridient;

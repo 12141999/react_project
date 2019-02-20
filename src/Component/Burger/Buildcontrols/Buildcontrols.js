@@ -4,9 +4,10 @@ import Buildcontrol from './Buildcontrol/Buildcontrol';
 
 const controls = [
     {lable : 'Salad' , type : 'salad'},
+    {lable : 'Bacon' , type : 'bacon'},
     {lable : 'Cheese' , type : 'cheese'},
-    {lable : 'Meat' , type : 'meat'},
-    {lable : 'Bacon' , type : 'bacon'}
+    {lable : 'Meat' , type : 'meat'}
+    
 ];
 
 const buildcontrols = (props) => (
@@ -16,8 +17,8 @@ const buildcontrols = (props) => (
             <Buildcontrol
              key={ctrl.lable} 
              lable={ctrl.lable} 
-             added={props.ingredientsAdded.bind(this,ctrl.type)}
-             deleted={props.ingredientsdeleted.bind(this,ctrl.type)}
+             added={()=> props.ingredientsAdded(ctrl.type)}
+             deleted={()=> props.ingredientsRemoved(ctrl.type)}
              disabled={props.disabled[ctrl.type]}
              />
         ))} 
