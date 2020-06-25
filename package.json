@@ -2,6 +2,10 @@
   "name": "burger-site",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": "8.9.1",
+    "npm" : "5.5.1"
+  },
   "dependencies": {
     "prop-types": "^15.6.2",
     "react": "^16.7.0",
